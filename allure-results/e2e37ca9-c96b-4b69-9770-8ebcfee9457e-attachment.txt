@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//span[normalize-space()='Apple iPhone 15 (128 GB) - Blue'"
+}

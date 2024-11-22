@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": " //a[@aria-label='Apply the filter 5G to narrow results']//i[@class='a-icon a-icon-checkbox']"
+}
