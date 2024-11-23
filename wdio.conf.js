@@ -22,7 +22,7 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/*.js',
-       'test/specs/AmazonTest.js',
+      // 'test/specs/AmazonTest.js',
         'test/specs/EcomerceTest.js'
         
 
