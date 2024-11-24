@@ -1,12 +1,12 @@
-name: NodeJS with Grunt
+ name: NodeJS with Grunt
 
-on:
+ on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-jobs:
+ jobs:
   build:
     runs-on: ubuntu-latest
 
@@ -15,14 +15,23 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
+    # Step 1: Checkout repository
     - uses: actions/checkout@v4
 
+    # Step 2: Set up Node.js
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
-      run: |
-        npm install
-        grunt
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Step 4: Verify Grunt installation
+    - name: Verify Grunt
+      run: npx grunt --version
+
+    # Step 5: Run Grunt tasks
+    - name: Run Grunt build
+      run: npx grunt
