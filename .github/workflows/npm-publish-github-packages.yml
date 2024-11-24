@@ -1,0 +1,30 @@
+ name: WebdriverIO Tests
+
+ on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+ jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 4: Run WebdriverIO tests
+      - name: Run WDIO tests
+        run: npx wdio run wdio.conf.js
